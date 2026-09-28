@@ -1,0 +1,19 @@
+{
+  "format": 1,
+  "id": "com.skylight.customrpc",
+  "name": "Skylight Custom RPC",
+  "description": "Custom Discord Rich Presence for Revenge Mobile.",
+  "author": "TwilightRavennMiya",
+  "version": "1.0.0",
+  "dependencies": {
+    "revenge.api": {
+      "version": ">=1 <2"
+    },
+    "discord": {
+      "version": "*"
+    }
+  },
+  "dist": {
+    "script": "index.js"
+  }
+}
