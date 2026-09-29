@@ -7,8 +7,8 @@
     }
   ],
   "main": "builds/skylight-custom-rpc/index.js",
-  "hash": "skylight-custom-rpc-1.0.0",
+  "hash": "5b30c9d8f1",
   "vendetta": {
-    "icon": "ActivityIcon"
+    "icon": "ic_activity"
   }
 }
