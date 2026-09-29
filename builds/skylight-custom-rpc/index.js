@@ -171,7 +171,8 @@ function Settings() {
   );
 }
 
-({
+
+const SkylightCustomRPC = {
   onLoad() {
     unloaded = false;
     if (s.mode === "automatic" || s.running) start();
@@ -180,5 +181,8 @@ function Settings() {
     unloaded = true;
     end();
   },
-  settings: React.createElement(Settings)
-})
+  settings: Settings
+};
+
+module.exports = SkylightCustomRPC;
+module.exports.default = SkylightCustomRPC;
