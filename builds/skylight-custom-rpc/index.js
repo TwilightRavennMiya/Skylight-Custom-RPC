@@ -180,5 +180,5 @@ module.exports = {
     unloaded = true;
     end();
   },
-  settings: Settings
+  settings: React.createElement(Settings)
 };
