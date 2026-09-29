@@ -3,7 +3,6 @@
 
 const { FluxDispatcher } = vendetta.metro.common;
 const { storage } = vendetta.plugin;
-const { Forms } = vendetta.ui.components;
 const { ReactNative, React } = vendetta.metro.common;
 
 const s = storage;
@@ -102,63 +101,73 @@ function automatic(v) {
   else end();
 }
 
-function Row({label, subLabel, onPress}) {
-  return React.createElement(Forms.FormRow, {
-    label, subLabel,
-    trailing: Forms.FormRow.Arrow,
-    onPress
-  });
+function Button({title, onPress}) {
+  return React.createElement(
+    ReactNative.TouchableOpacity,
+    { onPress, style: { padding: 14, marginVertical: 5, borderRadius: 10, backgroundColor: "#5865F2" } },
+    React.createElement(ReactNative.Text, { style: { color: "#fff", fontWeight: "600", textAlign: "center" } }, title)
+  );
+}
+
+function Label({text}) {
+  return React.createElement(ReactNative.Text, { style: { color: "#fff", fontSize: 16, marginTop: 14, marginBottom: 6 } }, text);
 }
 
 function Input({title, value, onChange, keyboardType}) {
-  return React.createElement(Forms.FormInput, {
-    title, value: value || "", onChange,
-    keyboardType
-  });
+  return React.createElement(ReactNative.View, { style: { marginBottom: 10 } },
+    React.createElement(Label, { text: title }),
+    React.createElement(ReactNative.TextInput, {
+      value: value == null ? "" : String(value),
+      onChangeText: onChange,
+      keyboardType,
+      placeholderTextColor: "#999",
+      style: {
+        color: "#fff",
+        backgroundColor: "#2b2d31",
+        borderRadius: 8,
+        paddingHorizontal: 12,
+        paddingVertical: 10
+      }
+    })
+  );
 }
 
 function Settings() {
   const [, force] = React.useState(0);
   const refresh = () => force(x => x + 1);
 
-  return React.createElement(ReactNative.ScrollView, null,
-    React.createElement(ReactNative.View, {style:{paddingBottom:30}},
-      React.createElement(Forms.FormSection, {title:"RPC Controls"},
-        Row({label:"Start RPC", subLabel:s.running ? "Running" : "Start your RPC", onPress:()=>{start(); refresh();}}),
-        Row({label:"End RPC", subLabel:s.running ? "Stop your RPC" : "Already stopped", onPress:()=>{end(); refresh();}}),
-        React.createElement(Forms.FormSwitchRow, {
-          label:"Automatic RPC",
-          value:s.mode === "automatic",
-          onValueChange:v=>{automatic(v); refresh();}
-        }),
-        React.createElement(Forms.FormText,{style:{margin:16}},
-          "Automatic RPC starts while Discord is open and clears when the plugin unloads."
-        )
-      ),
-      React.createElement(Forms.FormSection,{title:"Basic"},
-        Input({title:"Name",value:s.activity.name,onChange:v=>{s.activity.name=v;refresh();}}),
-        Input({title:"Application ID",value:s.activity.application_id,onChange:v=>{s.activity.application_id=v;refresh();},keyboardType:"numeric"}),
-        Input({title:"Activity Type (0/1/2/3/5)",value:String(s.activity.type),onChange:v=>{s.activity.type=Number(v)||0;refresh();},keyboardType:"numeric"}),
-        Input({title:"Details",value:s.activity.details,onChange:v=>{s.activity.details=v;refresh();}}),
-        Input({title:"State",value:s.activity.state,onChange:v=>{s.activity.state=v;refresh();}})
-      ),
-      React.createElement(Forms.FormSection,{title:"Images"},
-        Input({title:"Large Image",value:s.activity.assets.large_image,onChange:v=>{s.activity.assets.large_image=v;refresh();}}),
-        Input({title:"Large Image Hover Text",value:s.activity.assets.large_text,onChange:v=>{s.activity.assets.large_text=v;refresh();}}),
-        Input({title:"Small Image",value:s.activity.assets.small_image,onChange:v=>{s.activity.assets.small_image=v;refresh();}}),
-        Input({title:"Small Image Hover Text",value:s.activity.assets.small_text,onChange:v=>{s.activity.assets.small_text=v;refresh();}})
-      ),
-      React.createElement(Forms.FormSection,{title:"Timestamps"},
-        React.createElement(Forms.FormSwitchRow,{label:"Enable timestamps",value:!!s.activity.timestamps.enabled,onValueChange:v=>{s.activity.timestamps.enabled=v;refresh();}}),
-        Row({label:"Use current time",subLabel:"Reset start timestamp to now",onPress:()=>{s.activity.timestamps.start=Date.now();refresh();}})
-      ),
-      React.createElement(Forms.FormSection,{title:"Buttons"},
-        Input({title:"Button 1 Label",value:s.activity.buttons[0].label,onChange:v=>{s.activity.buttons[0].label=v;refresh();}}),
-        Input({title:"Button 1 URL",value:s.activity.buttons[0].url,onChange:v=>{s.activity.buttons[0].url=v;refresh();}}),
-        Input({title:"Button 2 Label",value:s.activity.buttons[1].label,onChange:v=>{s.activity.buttons[1].label=v;refresh();}}),
-        Input({title:"Button 2 URL",value:s.activity.buttons[1].url,onChange:v=>{s.activity.buttons[1].url=v;refresh();}})
-      )
-    )
+  return React.createElement(ReactNative.ScrollView, { contentContainerStyle: { padding: 16, paddingBottom: 40 } },
+    React.createElement(ReactNative.Text, { style: { color: "#fff", fontSize: 22, fontWeight: "700", marginBottom: 12 } }, "Skylight Custom RPC"),
+    Button({ title: s.running ? "RPC Running" : "Start RPC", onPress: () => { start(); refresh(); } }),
+    Button({ title: "End RPC", onPress: () => { end(); refresh(); } }),
+    React.createElement(ReactNative.View, { style: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginVertical: 12 } },
+      React.createElement(ReactNative.Text, { style: { color: "#fff", fontSize: 16 } }, "Automatic RPC"),
+      React.createElement(ReactNative.Switch, {
+        value: s.mode === "automatic",
+        onValueChange: v => { s.mode = v ? "automatic" : "manual"; v ? start() : end(); refresh(); }
+      })
+    ),
+    Input({title:"Name",value:s.activity.name,onChange:v=>{s.activity.name=v;refresh();}}),
+    Input({title:"Application ID",value:s.activity.application_id,onChange:v=>{s.activity.application_id=v;refresh();},keyboardType:"numeric"}),
+    Input({title:"Activity Type (0/1/2/3/5)",value:s.activity.type,onChange:v=>{s.activity.type=Number(v)||0;refresh();},keyboardType:"numeric"}),
+    Input({title:"Details",value:s.activity.details,onChange:v=>{s.activity.details=v;refresh();}}),
+    Input({title:"State",value:s.activity.state,onChange:v=>{s.activity.state=v;refresh();}}),
+    Input({title:"Large Image",value:s.activity.assets.large_image,onChange:v=>{s.activity.assets.large_image=v;refresh();}}),
+    Input({title:"Large Image Hover Text",value:s.activity.assets.large_text,onChange:v=>{s.activity.assets.large_text=v;refresh();}}),
+    Input({title:"Small Image",value:s.activity.assets.small_image,onChange:v=>{s.activity.assets.small_image=v;refresh();}}),
+    Input({title:"Small Image Hover Text",value:s.activity.assets.small_text,onChange:v=>{s.activity.assets.small_text=v;refresh();}}),
+    React.createElement(ReactNative.View, { style: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginVertical: 12 } },
+      React.createElement(ReactNative.Text, { style: { color: "#fff", fontSize: 16 } }, "Enable timestamp"),
+      React.createElement(ReactNative.Switch, {
+        value: !!s.activity.timestamps.enabled,
+        onValueChange: v => { s.activity.timestamps.enabled = v; if (v) s.activity.timestamps.start = Date.now(); refresh(); }
+      })
+    ),
+    Input({title:"Button 1 Label",value:s.activity.buttons[0].label,onChange:v=>{s.activity.buttons[0].label=v;refresh();}}),
+    Input({title:"Button 1 URL",value:s.activity.buttons[0].url,onChange:v=>{s.activity.buttons[0].url=v;refresh();}}),
+    Input({title:"Button 2 Label",value:s.activity.buttons[1].label,onChange:v=>{s.activity.buttons[1].label=v;refresh();}}),
+    Input({title:"Button 2 URL",value:s.activity.buttons[1].url,onChange:v=>{s.activity.buttons[1].url=v;refresh();}}),
+    React.createElement(ReactNative.Text, { style: { color: "#aaa", fontSize: 13, marginTop: 12 } }, "Changes are saved automatically. Press Start RPC after editing.")
   );
 }
 
