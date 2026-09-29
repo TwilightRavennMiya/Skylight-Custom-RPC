@@ -171,7 +171,7 @@ function Settings() {
   );
 }
 
-module.exports = {
+({
   onLoad() {
     unloaded = false;
     if (s.mode === "automatic" || s.running) start();
@@ -181,4 +181,4 @@ module.exports = {
     end();
   },
   settings: React.createElement(Settings)
-};
+})
