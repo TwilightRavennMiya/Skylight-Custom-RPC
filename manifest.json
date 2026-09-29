@@ -1,14 +1,11 @@
 {
-  "name": "Skylight Custom RPC",
-  "description": "Custom Discord Rich Presence with Start, End, and Automatic controls.",
-  "authors": [
-    {
-      "name": "TwilightRavennMiya"
-    }
-  ],
-  "main": "builds/skylight-custom-rpc/index.js",
-  "hash": "5b30c9d8f1",
-  "vendetta": {
-    "icon": "ic_activity"
-  }
+    "name": "Skylight Custom RPC",
+    "description": "Custom Discord Rich Presence with Start, End, Automatic controls and editable fields.",
+    "authors": [
+        {
+            "name": "TwilightRavennMiya"
+        }
+    ],
+    "main": "index.js",
+    "hash": "7c6f2b4a9e1d3f80"
 }
