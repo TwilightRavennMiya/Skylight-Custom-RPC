@@ -1,0 +1,83 @@
+/**
+ * Revenge Pastel Pony — peach / coral / cream theme
+ * For CSS-theme loaders compatible with Discord's standard CSS variables.
+ * Artwork is not generated or modified; this file only styles the interface.
+ */
+:root {
+  --background-primary: #fff1e8;
+  --background-secondary: #ffe4d8;
+  --background-secondary-alt: #fbd4c7;
+  --background-tertiary: #f7c2b1;
+  --background-accent: #f3a18e;
+  --background-floating: #fff7f1;
+  --background-mobile-primary: #fff1e8;
+  --background-mobile-secondary: #ffe4d8;
+  --channeltextarea-background: #fff8f3;
+  --input-background: #fff8f3;
+  --modal-background: #fff1e8;
+  --modal-footer-background: #ffe4d8;
+  --text-normal: #75483f;
+  --text-muted: #a77c70;
+  --header-primary: #75483f;
+  --header-secondary: #a66c60;
+  --interactive-normal: #b47769;
+  --interactive-hover: #8d554b;
+  --interactive-active: #713f39;
+  --interactive-muted: #caa99f;
+  --brand-experiment: #e98f82;
+  --brand-experiment-560: #dc796d;
+  --brand-experiment-600: #d96f65;
+  --button-secondary-background: #f6c4b6;
+  --button-secondary-background-hover: #efad9f;
+  --button-secondary-background-active: #e99587;
+  --scrollbar-auto-thumb: #e6a99a;
+  --scrollbar-auto-track: #ffe4d8;
+  --scrollbar-thin-thumb: #e6a99a;
+  --scrollbar-thin-track: transparent;
+  --background-modifier-hover: #f6d2c6;
+  --background-modifier-active: #efc1b3;
+  --background-modifier-selected: #f5c6b9;
+  --background-modifier-accent: #eab8aa;
+  --mention-background: #f4c2b8;
+  --mention-foreground: #8d4d46;
+  --info-warning-foreground: #a96535;
+  --info-danger-foreground: #b84f55;
+  --info-positive-foreground: #5f9872;
+  --status-positive: #78a982;
+  --status-danger: #d96f72;
+  --status-warning: #e6ad66;
+  --status-speaking: #77a985;
+}
+
+/* Soft pastel panels and chat input */
+[class*="sidebar"],
+[class*="panels"],
+[class*="members"],
+[class*="membersWrap"],
+[class*="container"] [class*="channelTextArea"] {
+  border-color: #f0c8ba !important;
+}
+
+[class*="channelTextArea"] {
+  background: #fff8f3 !important;
+  border: 1px solid #f0c8ba !important;
+  border-radius: 14px !important;
+}
+
+[class*="message"] [class*="contents"] {
+  border-radius: 8px;
+}
+
+[class*="selected"] [class*="name"],
+[class*="modeSelected"] [class*="name"] {
+  color: #713f39 !important;
+}
+
+[class*="unread"] {
+  background-color: #e98f82 !important;
+}
+
+::selection {
+  background: #f2b7aa;
+  color: #713f39;
+}
