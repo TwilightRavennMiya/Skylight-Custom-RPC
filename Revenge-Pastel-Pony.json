@@ -8,48 +8,132 @@
   ],
   "spec": 2,
   "semanticColors": {
-    "HEADER_PRIMARY": "#75483f",
-    "HEADER_SECONDARY": "#a66c60",
-    "TEXT_NORMAL": "#75483f",
-    "TEXT_MUTED": "#a77c70",
-    "TEXT_LINK": "#d96f65",
-    "INTERACTIVE_NORMAL": "#b47769",
-    "INTERACTIVE_HOVER": "#8d554b",
-    "INTERACTIVE_ACTIVE": "#713f39",
-    "INTERACTIVE_MUTED": "#caa99f",
-    "BACKGROUND_PRIMARY": "#fff1e8",
-    "BACKGROUND_SECONDARY": "#ffe4d8",
-    "BACKGROUND_SECONDARY_ALT": "#fbd4c7",
-    "BACKGROUND_TERTIARY": "#f7c2b1",
-    "BACKGROUND_ACCENT": "#f3a18e",
-    "BACKGROUND_FLOATING": "#fff7f1",
-    "BACKGROUND_MOBILE_PRIMARY": "#fff1e8",
-    "BACKGROUND_MOBILE_SECONDARY": "#ffe4d8",
-    "BACKGROUND_NESTED_FLOATING": "#ffe4d8",
-    "BACKGROUND_MODIFIER_HOVER": "#f6d2c6",
-    "BACKGROUND_MODIFIER_ACTIVE": "#efc1b3",
-    "BACKGROUND_MODIFIER_SELECTED": "#f5c6b9",
-    "BACKGROUND_MODIFIER_ACCENT": "#eab8aa",
-    "CHANNELTEXTAREA_BACKGROUND": "#fff8f3",
-    "CHAT_BACKGROUND": "#fff1e8",
-    "BRAND_EXPERIMENT": "#e98f82",
-    "BRAND_EXPERIMENT_560": "#dc796d",
-    "BRAND_EXPERIMENT_600": "#d96f65",
-    "BUTTON_SECONDARY_BACKGROUND": "#f6c4b6",
-    "BUTTON_SECONDARY_BACKGROUND_HOVER": "#efad9f",
-    "BUTTON_SECONDARY_BACKGROUND_ACTIVE": "#e99587",
-    "SCROLLBAR_AUTO_THUMB": "#e6a99a",
-    "SCROLLBAR_AUTO_TRACK": "#ffe4d8",
-    "SCROLLBAR_THIN_THUMB": "#e6a99a",
-    "SCROLLBAR_THIN_TRACK": "#fff1e8",
-    "INPUT_BACKGROUND": "#fff8f3",
-    "MODAL_BACKGROUND": "#fff1e8",
-    "MODAL_FOOTER_BACKGROUND": "#ffe4d8",
-    "MENTION_BACKGROUND": "#f4c2b8",
-    "MENTION_FOREGROUND": "#8d4d46",
-    "INFO_WARNING_FOREGROUND": "#a96535",
-    "INFO_DANGER_FOREGROUND": "#b84f55",
-    "INFO_POSITIVE_FOREGROUND": "#5f9872"
+    "HEADER_PRIMARY": [
+      "#75483f"
+    ],
+    "HEADER_SECONDARY": [
+      "#a66c60"
+    ],
+    "TEXT_NORMAL": [
+      "#75483f"
+    ],
+    "TEXT_MUTED": [
+      "#a77c70"
+    ],
+    "TEXT_LINK": [
+      "#d96f65"
+    ],
+    "INTERACTIVE_NORMAL": [
+      "#b47769"
+    ],
+    "INTERACTIVE_HOVER": [
+      "#8d554b"
+    ],
+    "INTERACTIVE_ACTIVE": [
+      "#713f39"
+    ],
+    "INTERACTIVE_MUTED": [
+      "#caa99f"
+    ],
+    "BACKGROUND_PRIMARY": [
+      "#fff1e8"
+    ],
+    "BACKGROUND_SECONDARY": [
+      "#ffe4d8"
+    ],
+    "BACKGROUND_SECONDARY_ALT": [
+      "#fbd4c7"
+    ],
+    "BACKGROUND_TERTIARY": [
+      "#f7c2b1"
+    ],
+    "BACKGROUND_ACCENT": [
+      "#f3a18e"
+    ],
+    "BACKGROUND_FLOATING": [
+      "#fff7f1"
+    ],
+    "BACKGROUND_MOBILE_PRIMARY": [
+      "#fff1e8"
+    ],
+    "BACKGROUND_MOBILE_SECONDARY": [
+      "#ffe4d8"
+    ],
+    "BACKGROUND_NESTED_FLOATING": [
+      "#ffe4d8"
+    ],
+    "BACKGROUND_MODIFIER_HOVER": [
+      "#f6d2c6"
+    ],
+    "BACKGROUND_MODIFIER_ACTIVE": [
+      "#efc1b3"
+    ],
+    "BACKGROUND_MODIFIER_SELECTED": [
+      "#f5c6b9"
+    ],
+    "BACKGROUND_MODIFIER_ACCENT": [
+      "#eab8aa"
+    ],
+    "CHANNELTEXTAREA_BACKGROUND": [
+      "#fff8f3"
+    ],
+    "CHAT_BACKGROUND": [
+      "#fff1e8"
+    ],
+    "BRAND_EXPERIMENT": [
+      "#e98f82"
+    ],
+    "BRAND_EXPERIMENT_560": [
+      "#dc796d"
+    ],
+    "BRAND_EXPERIMENT_600": [
+      "#d96f65"
+    ],
+    "BUTTON_SECONDARY_BACKGROUND": [
+      "#f6c4b6"
+    ],
+    "BUTTON_SECONDARY_BACKGROUND_HOVER": [
+      "#efad9f"
+    ],
+    "BUTTON_SECONDARY_BACKGROUND_ACTIVE": [
+      "#e99587"
+    ],
+    "SCROLLBAR_AUTO_THUMB": [
+      "#e6a99a"
+    ],
+    "SCROLLBAR_AUTO_TRACK": [
+      "#ffe4d8"
+    ],
+    "SCROLLBAR_THIN_THUMB": [
+      "#e6a99a"
+    ],
+    "SCROLLBAR_THIN_TRACK": [
+      "#fff1e8"
+    ],
+    "INPUT_BACKGROUND": [
+      "#fff8f3"
+    ],
+    "MODAL_BACKGROUND": [
+      "#fff1e8"
+    ],
+    "MODAL_FOOTER_BACKGROUND": [
+      "#ffe4d8"
+    ],
+    "MENTION_BACKGROUND": [
+      "#f4c2b8"
+    ],
+    "MENTION_FOREGROUND": [
+      "#8d4d46"
+    ],
+    "INFO_WARNING_FOREGROUND": [
+      "#a96535"
+    ],
+    "INFO_DANGER_FOREGROUND": [
+      "#b84f55"
+    ],
+    "INFO_POSITIVE_FOREGROUND": [
+      "#5f9872"
+    ]
   },
   "rawColors": {
     "PRIMARY_100": "#75483f",
